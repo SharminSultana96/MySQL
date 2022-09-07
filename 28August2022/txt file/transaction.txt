@@ -1,0 +1,5 @@
+SET autocommit=0;
+START TRANSACTION;  
+INSERT INTO students VALUES(11, 'Selim',  'selim@gmail.com', '014857856369');   
+NSERT INTO users VALUES(NULL, 'selim',  'selim@gmail.com', 'sha1('abcd')', 'Male');   
+COMMIT; /*ROLLBACK*/

@@ -1,0 +1,18 @@
+########Create Duplicate Table########
+CREATE TABLE employees2  SELECT * FROM `employees`;
+########Temporary Table##########
+CREATE TEMPORARY TABLE emp_temp SELECT * FROM `employees`;
+########Alt Table/Change/Add/Drop/Rename###############
+ALTER TABLE employees2 ADD COLUMN birthdate DATE;
+ALTER TABLE employees2 DROP COLUMN birthdate;
+ALTER TABLE employees2 ADD COLUMN homedistrict VARCHAR(40);
+ALTER TABLE employees2 CHANGE COLUMN homedistrict homeDistrict VARCHAR(20) NOT NULL;
+#######Create Localhost User###########
+create user 'sharmin'@'localhost' identified by 'abcd';
+
+
+mysql -h localhost -u sharmin -p
+Enter password:
+
+
+

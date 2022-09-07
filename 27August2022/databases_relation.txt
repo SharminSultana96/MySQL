@@ -1,0 +1,22 @@
+###################RELATION DATABASES##################
+customers:
+customerNumber, customerName, city, country;
+employees:
+employeeNumber, lastName, email, jobTitle;
+SELECT customerNumber, customerName, city, country,
+employeeNumber, lastName, email, jobTitle FROM customers, employees WHERE employees.employeeNumber = customers.salesRepEmployeeNumber;
+#################################################################
+SELECT customerNumber, customerName, city, country, employeeNumber, lastName, email, jobTitle 
+FROM customers, employees WHERE employeeNumber = salesRepEmployeeNumber;
+######################################################################
+SELECT c.customerNumber, c.customerName, c.city, c.country, e.employeeNumber, e.lastName, e.email, e.jobTitle 
+FROM customers c, employees e WHERE e.employeeNumber = c.salesRepEmployeeNumber;
+#####################################################################
+CREATE  VIEW customersList_with_employeesList AS
+SELECT c.customerNumber, c.customerName, c.city, c.country, e.employeeNumber, e.lastName, e.email, e.jobTitle 
+FROM customers c, employees e WHERE e.employeeNumber = c.salesRepEmployeeNumber;
+###################################################################
+students_table_log
+id, student_id, student_name, student_email, student_phone, action, action_time;
+
+

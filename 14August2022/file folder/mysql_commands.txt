@@ -1,0 +1,48 @@
+#####SHELL#####
+
+#####create mysql hosting#####
+1. mysql -h localhost -u root -p
+enter password:
+
+####when we want to exit####
+2. MariaDB [(none)]> exit
+Bye
+#####create again mysql hosting#####
+3. mysql -h localhost -u root -p
+enter password:
+
+#####create a database#####
+4. MariaDB [(none)]> show databases;
+Database
+
+#####use folder#####
+5. MariaDB [(none)]> use wdpf51;
+Database changed
+
+
+
+
+
+
+#####all columns from a table#####
+SELECT * FROM employees;
+
+####specific columns for a table####
+SELECT employeeNumber, lastName, firstName FROM employees order by employeeNumber;
+
+###order by Ascending or Decending####
+SELECT employeeNumber, lastName, firstName FROM employees order by firstName, lastName;
+SELECT employeeNumber, lastName, firstName FROM employees order by firstName, ASC;
+SELECT employeeNumber, lastName, firstName FROM employees order by lastName, DESC;
+
+
+###where Condition with Clune####
+SELECT employeeNumber, lastName, firstName officeCode FROM employees where officeCode = 2;
+
+####condition with officeCode####
+SELECT employeeNumber, lastName, firstName, email FROM employees where officeCode = 1 AND jobTitle = "Sales Rep";
+
+####select distinct####
+SELECT DISTINCT country FROM customers ORDER BY country;
+
+

@@ -1,0 +1,49 @@
+//user creat
+mysql> create user 'dipu'@'localhost' identified by 'abcd';
+//to exit write
+exit
+
+//to enter created database
+mysql -h localhost -u dipu -p 
+enter password
+
+// show database
+
+show databases
+
+//to drop user
+drop user 'jason'@'localhost';
+
+//rename user name
+
+RENAME USER 'dipu'@'localhost' TO 'jannat'@'localhost';
+
+//grant/permission(aekhane .dot means table er name, means sokol table)
+grant select on wdpf51.* to 'jannat'@'localhost';
+
+// to use databases
+use wdpf51
+
+//table show korte
+show tables
+
+//select any table from that 
+select * from users(users aekhane akta table ja oe database e ache)
+
+//update and delt permission
+grant update,delete on wdpf51.* to 'jannat'@'localhost';
+
+//to describe table 
+use databases(wdpf51)
+then write...
+describe users(table name)
+
+//to insert any data on that table
+INSERT INTO users VALUES ('10', 'salma', 'fahim@gmail.com', SHA1('efg'), 'dhaka');  ...aekhane password e sha1 dete hbe
+
+//grant ka withdraw korar jonno revoke
+revoke insert on wdpf51.* FROM 'jannat'@'localhost';..(insert je permission daoa hoachelo seta withdraw korte )
+
+//only one feild er jonno grant withdraw
+revoke insert (name) on wdpf51.* FROM 'jannat'@'localhost';.
+

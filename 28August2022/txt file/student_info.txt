@@ -1,0 +1,41 @@
+INSERT INTO student_info 
+VALUES(NULL, 101, 'Mark', 'English', '68',  '346475657954587'),
+(NULL, 102,  'Joseph', 'Physics', '70',  '9796897858967'),
+(NULL, 103, 'Jhon', 'Maths', '70', '9987784674545'),
+(NULL, 104, 'Barack', 'Maths', '90', ''5364537848756),
+(NULL, 105, 'Rinky', 'Maths, '85', '34647565798587'),
+(NULL, 106, 'Adam', 'English', '68', '08547565795587'),
+(NULL, 107, 'Andrew', 'Physics', '78', '346475650004587'),
+(NULL, 108, 'Jukerbark', 'Chemistry', '88', '34665721344587'),
+(NULL, 109, 'Smith', 'Accounting', '70', '3464750788579545'),
+(NULL, 110, 'Andrew', 'Biolozy', '92', '3089765657954587');
+#############################################################
+DELIMITER $$
+CREATE PROCEDURE GetStudent_info()
+BEGIN
+SELECT * FROM student_info ORDER BY student_code;
+END $$
+// CALL GetStudent_info();
+#######################################################
+DELIMITER $$
+CREATE PROCEDURE GetStudent_info()
+BEGIN
+SELECT  COUNT(student_name) AS Total_student FROM student_info;
+END $$
+// CALL GetStudent_info();
+######################################################
+DELIMITER &&  
+CREATE PROCEDURE get_merit_student ()  
+BEGIN  
+    SELECT * FROM student_info WHERE marks > 70;  
+    SELECT COUNT(stud_code) AS Total_Student FROM student_info;    
+END &&  
+DELIMITER ;  
+######################################################
+DELIMITER &&  
+CREATE PROCEDURE get_student (IN var1 INT)  
+BEGIN  
+    SELECT * FROM student_info LIMIT var1;  
+    SELECT COUNT(stud_code) AS Total_Student FROM student_info;    
+END &&  
+DELIMITER ;

@@ -1,0 +1,36 @@
+#####shell:######
+mysqladmin -u root -p shutdown
+mysqladmin -u root -p
+mysql -u root -p
+mysqladmin -u root -p variables
+
+#######variables:#######
+show variables;
+
+##########Ascending/Decending:##########
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY firstName 
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY firstName DESC
+
+########(WILDCARD)AND/OR/BETWEEN/IN/Date Format:#########
+SELECT employeeNumber, firstName, email, jobTitle FROM employees WHERE jobTitle = 'Sales Rep'
+SELECT employeeNumber, firstName, email, jobTitle FROM employees WHERE jobTitle = 'Sales Rep' AND officeCode=1
+SELECT employeeNumber, firstName, email, jobTitle FROM employees WHERE jobTitle = 'Sales Rep' OR officeCode=1
+SELECT employeeNumber, firstName, email, jobTitle FROM employees WHERE jobTitle = 'Sales Rep' AND officeCode IN (1,2)
+SELECT orderNumber, shippedDate, status, customerNumber FROM orders WHERE customerNumber BETWEEN 100 AND 150
+SELECT orderNumber, shippedDate, status FROM orders WHERE shippedDate BETWEEN '2004-01-01' AND '2004-12-31' 
+
+#########LIKE/LIMIT:############
+SELECT employeeNumber, firstName, email FROM employees WHERE firstName LIKE 'l%'; (%D, %on%,)
+SELECT employeeNumber, firstName, email FROM employees LIMIT 5, 5
+
+#########COUNT/COUNT AS/SUM AS/SUM AS DESC:############
+SELECT COUNT(*) FROM employees
+SELECT COUNT(*) AS Total FROM employees
+SELECT  SUM(amount) AS 'Total  Amount' FROM payments
+SELECT  customerNumber, SUM(amount) AS 'Total  Amount' FROM payments GROUP BY customerNumber
+SELECT  customerNumber, SUM(amount) AS 'Total  Amount' FROM payments GROUP BY customerNumber ORDER BY SUM(amount) DESC;
+
+##########NULL/IS NULL/Name or Email UPDATE:###########
+SELECT customerNumber, city, country FROM customers WHERE salesRepEmployeeNumber IS NULL;
+SELECT customerNumber, city, country , salesRepEmployeeNumber FROM customers WHERE salesRepEmployeeNumber IS NULL;
+UPDATE employees SET lastName='Akter', firstName='Sharmin', email= 'sharminsultana@gmail.com' WHERE employeeNumber = 1002

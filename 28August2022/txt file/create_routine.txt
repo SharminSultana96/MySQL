@@ -1,0 +1,24 @@
+1. **********//Create Procedure Statement//*************
+DELIMITER $$
+CREATE PROCEDURE GetCustomers()
+BEGIN
+SELECT
+customerName,
+city,
+state,
+postalCode,
+country
+FROM 
+customers
+ORDER BY
+customerName;
+END $$
+****************//Call procedure statement//*****************
+CALL GetCustomers();
+############################################################################
+2.DELIMITER $$
+CREATE PROCEDURE GetStudents()
+BEGIN
+SELECT * FROM students ORDER BY student_id;
+END $$
+################################################################################
